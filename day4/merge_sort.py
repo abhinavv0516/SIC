@@ -1,13 +1,30 @@
-def insertion_sort(array):
-    for i in range(1, len(array)):
-        element = array[i]
-        j = i - 1
-        while j >= 0 and element < array[j]:
-            array[j + 1] = array[j]
-            j -= 1
-        array[j + 1] = element
-    return array
+def merge(numbers, low, mid, high):
+    array1 = numbers[low : mid+1]
+    array2 = numbers[mid+1 : high+1]
 
-numbers = [int(ele) for ele in input("Enter numbers separated by space: ").split()]
-sorted_numbers = insertion_sort(numbers)
-print("Sorted array:", sorted_numbers)
+    i = 0
+    j = 0
+    k = low
+    while i < len(array1) and j < len(array2):
+        if array1[i] < array2[j]:
+            numbers[k] = array1[i]
+            i += 1
+        else:
+            numbers[k] = array2[j]
+            j += 1
+        k += 1
+    numbers[k:high+1] = array1[i:] + array2[j:]
+    # numbers[k:high+1] = array2[j:]
+
+def merge_sort(numbers, low, high):
+    if low < high:
+        mid = low + (high - low) // 2
+        merge_sort(numbers, low, mid)
+        merge_sort(numbers, mid+1, high)
+        merge(numbers, low, mid, high)
+
+print('Enter the input numbers: ')
+numbers = [int(num) for num in input().split()]
+
+merge_sort(numbers, 0, len(numbers)-1)
+print('Sorted Numbers are \n', numbers)
