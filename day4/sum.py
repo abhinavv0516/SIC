@@ -10,8 +10,7 @@ def sum_of_odd_placed_even_digits(number):
         number = number // 10
         if digit % 2 == 0:
             if flip:
-                sum1 += digit
-            else:
+                sum1 += digit 
                 sum2 += digit
         flip = not flip
     if flip:
