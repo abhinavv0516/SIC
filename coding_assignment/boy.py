@@ -1,26 +1,13 @@
-def can_be_arranged(n, boys, girls):
-    boys.sort()
-    girls.sort()
-    i, j = 0, 0
-    possible = True
-    while i < n and j < n:
-        if (i < n and boys[i] < girls[j]) or (j < n and girls[j] < boys[i]):
-            if i > 0 and boys[i] == boys[i-1]:
-                possible = False
-                break
-            if j > 0 and girls[j] == girls[j-1]:
-                possible = False
-                break
+def check_height(N,boys_height,girls_height):
+    boys_height.sort()
+    girls_height.sort()
+        
+    pass
 
-        if boys[i] < girls[j]:
-            i += 1
-        else:
-            j += 1
-
-    return "YES" if possible else "NO"
-t = int(input())
-for _ in range(t):
-    n = int(input())
-    boys = list(map(int, input().split()))
-    girls = list(map(int, input().split()))
-    print(can_be_arranged(n, boys, girls))
+N=int(input("Enter number of test cases:"))
+for _ in range(N):
+    size=int(input("Enter number of boys and girls:"))
+    boys_height=[int(i) for i in input("Enter boys heights:").split()]
+    girls_height=[int(i) for i in input("Enter girls heights:").split()]
+    result=check_height(N,boys_height,girls_height)
+    print(result)
