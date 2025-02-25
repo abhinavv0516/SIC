@@ -1,0 +1,27 @@
+ Car Wash Data Analysis
+Overview
+This project dives into customer data to uncover insights on conversion rates, referrals, and acquisition sources using Python, Pandas, Matplotlib, and Seaborn.
+
+What’s Inside?
+📊 Social Media Conversion – How many users from social media actually became customers? (3D Pie Chart)
+🔗 Referral Program – Who’s referring the most people? (Histogram + Top Referrers List)
+🗣 Who’s Talking About Us? – Breakdown of customer sources. (2D Bar Chart)
+
+How to Run 🚀
+1️⃣ Install dependencies:
+
+bash
+Copy
+Edit
+pip install pandas matplotlib seaborn
+2️⃣ Place data.csv in the project folder.
+3️⃣ Run the script:
+
+bash
+Copy
+Edit
+python Social_Media.py
+Future Enhancements
+✨ Interactive dashboards with Plotly/Streamlit
+📈 Trend analysis over time
+⚡ Speed optimization for large datasets
